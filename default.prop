@@ -1,0 +1,208 @@
+#
+# system.prop for falcon
+#
+
+
+# Use reference RIL for initial bringup
+keyguard.no_require_sim=true
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+persist.radio.msgtunnel.start=false
+
+
+# system props for the cne module
+persist.cne.feature=0
+
+
+# Skip /sys/power/wait_for_fb_* nodes and
+# force FB to be always on
+debug.sf.fb_always_on=1
+
+
+# QCOM Display
+ro.sf.lcd_density=320
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+debug.mdpcomp.logs=0
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+
+
+# QC Perf
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+
+# QCOM
+com.qc.hardware=true
+
+
+# Media
+persist.demo.hdmirotationlock=false
+ro.hdmi.enable=true
+tunnel.decode=false
+tunnel.audiovideo.decode=false
+lpa.decode=true
+lpa.use-stagefright=true
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+mm.enable.smoothstreaming=true
+#9273 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
+mm.enable.qcom_parser=37491
+
+
+# WiFi
+wifi.interface=wlan0 
+wifi.supplicant_scan_interval=30
+persist.sys.qc.sub.rstrtlvl=3
+persist.sys.qc.sub.rdump.on=1
+persist.sys.qc.sub.rdump.max=20
+
+
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOlogs 7:AllLogs
+vidc.debug.level=1
+
+
+# system props for the data modules
+ro.use_data_netmgrd=true
+
+# QC time services
+persist.timed.enable=true
+
+
+# system prop for opengles version
+# 196608 is decimal for 0x30000 to report version 3
+ro.opengles.version=196608
+
+
+# simulate sdcard on /data/media
+ro.build.characteristics=nosdcard
+persist.bind_sdcard=true
+ro.crypto.fuse_sdcard=true
+
+
+#snapdragon value add features
+# System props for audio
+ro.qc.sdk.audio.ssr=false
+##fluencetype can be "fluence" or "fluencepro" or "none"
+persist.audio.fluence.mode=endfire
+persist.audio.handset.mic=digital
+ro.config.vc_call_vol_steps=7
+# FM maximum volume be between 0 and 8192 (0dB)
+ro.audio.fm_max_volume=5793
+
+
+# Enable/disable cabl
+ro.qualcomm.cabl=0
+
+
+# system prop for NFC DT
+ro.nfc.port=I2C
+
+
+# system property for Bluetooth hci transport
+#
+ro.qualcomm.bt.hci_transport=smd
+
+# system property for Bluetooth HFP version
+ro.bluetooth.hfp.ver=1.6
+
+# system property for Bluetooth SAP support
+# Motorola disabled SAP
+ro.qualcomm.bluetooth.sap=false
+
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=0
+##property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+# Motorola, ams087, 09/24/2013, IKJBMR2-6432 : disable tunnel audio encode
+#tunnel.audio.encode = true
+
+# Enable SSR
+persist.sys.ssr.restart_level=3
+persist.sys.qc.sub.rdump.on=1
+
+# For TCMD debug level
+persist.tcmd.log.limit=0
+
+# Disable QCOM net early sockets feature
+net.early.sockets=0
+
+
+# Radio RIL properties
+persist.radio.no_wait_for_card=1
+persist.radio.call_type=1
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.dfr_mode_set=1
+
+
+# Dalvik-Cache
+ro.MAX_HIDDEN_APPS=12
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=96m
+dalvik.vm.heapsize=256m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
+
+
+# Misc
+ro.usb.mtp=0x2e82 
+ro.usb.mtp_adb=0x2e76 
+ro.usb.ptp=0x2e83 
+ro.usb.ptp_adb=0x2e84
+ro.usb.bpt=0x2e28 
+ro.usb.bpt_adb=0x2e29
+ro.usb.bpteth=0x2e2a 
+ro.usb.bpteth_adb=0x2e2b
+
+
+# Others
+persist.radio.plmn_name_cmp=1
+ro.telephony.default_network=3
+ro.zygote.capsuid=0
+drm.service.enabled=true
+mdc_initial_max_retry=10
+ro.com.google.clientidbase=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+ro.setupwizard.mode=OPTIONAL
+ro.carrier=unknown
+ro.media.enc.aud.fileformat=amr
+ro.media.enc.aud.codec=amrnb
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+ro.qc.sdk.izat.premium_enabled=0
+ro.qc.sdk.izat.service_mask=0x4
+persist.gps.qc_nlp_in_use=0
+ro.gps.agps_provider=1
+
+
+# Set usb type
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
+ro.adb.secure=0
