@@ -1,10 +1,10 @@
 Device configuration for the Motorola G (falcon_umts)
 ===============================
-This is work in progress, please don't expect it to work.
+Device files for cm.11 kitkat compilation 
 
 Working-
 
-It Boots!! :P
+Kernel and Rom Boot correctly after compilation
 
 Audio
 
@@ -18,12 +18,12 @@ Backlight LEDS
 
 All Sensors
 
+Gallery (fix it to remove original cm gallery and replace with GalleryGoogle.apk)
+
 
 Not Working-
 
 Ril
-
-Gallery(Looks for removable storage)
 
 Camera
 
@@ -32,10 +32,3 @@ Video
 Wifi
 
 Bluetooth
-
-
-Not Tested-
-
-ScreenShot(same as gallery app)
-
-Audio Recorder(same as gallery app)
