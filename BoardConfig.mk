@@ -76,7 +76,7 @@ WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 BOARD_WLAN_DEVICE := qcwcn
 
-# Wifi Modules
+# Add Wifi Modules
  WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/prima
 	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
